@@ -5,6 +5,7 @@ import requests
 import re
 import sys
 
+URL = "https://www.baidu.com/s?wd=ip"
 header = {
     "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.100 Safari/537.36"}
 
@@ -61,4 +62,4 @@ def getInfoFromIP(ip):
                          
 if __name__ == "__main__":
     print(getIP())
-    getInfoFromIP("122.192.9.78")
+    print(getInfoFromIP("112.80.248.75"))
