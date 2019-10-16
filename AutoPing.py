@@ -111,4 +111,4 @@ class AutoPing():
 
 
 if __name__ == "__main__":
-    AutoPing(username="15399751638", password="ZUOzheng+670211", DEBUG=True).run()
+    AutoPing(username="******", password="******", DEBUG=True).run()
