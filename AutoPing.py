@@ -60,8 +60,12 @@ class AutoPing():
                 response = self.s.post(url=urlparse.urljoin(self.host, self.pingUrl),
                                        headers=self.header)
                 if response.status_code == 200:
-                    self.logDebug(response.json())
-                    self.writeFile(response.json())
+                    data = response.json()
+                    status = data.get("status", False)
+                    if status == 1 or status == -100:
+                        ## code 1: 操作成功，code -100: 今天已经Ping过了，明天再来试试吧
+                        self.writeFile(data)
+                    self.logDebug(data)
                 else:
                     self.logDebug("{} - {}".format(response.status_code, response.text))
             except Exception as e:
@@ -107,4 +111,4 @@ class AutoPing():
 
 
 if __name__ == "__main__":
-    AutoPing(username="******", password="*****", DEBUG=True).run()
+    AutoPing(username="15399751638", password="ZUOzheng+670211", DEBUG=True).run()
